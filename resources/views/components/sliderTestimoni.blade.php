@@ -2,7 +2,7 @@
     <div class="w-[80%] flex flex-col items-center gap-2">
         <div class="w-full flex justify-between gap-24 text-primerText text-lg">
             <div class="flex flex-col justify-between">
-                <p class="text-[32px] leading-[48px]"> “Candidax sangat membantu proses rekrutmen karyawan kami secara profesional dan menyeluruh, terlebih untuk posisi-posisi strategis mulai dari level pemula hingga berpengalaman.”</p>
+                <p class="text-xl 2xl:text-[32px] leading-8 2xl:leading-[48px]"> “Candidax sangat membantu proses rekrutmen karyawan kami secara profesional dan menyeluruh, terlebih untuk posisi-posisi strategis mulai dari level pemula hingga berpengalaman.”</p>
                 <div class="flex flex-col">
                     <p class="font-semibold text-base text-black">Jhon Doe</p>
                     <p class="text-sm ">Buisness Owner</p>

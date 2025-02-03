@@ -12,9 +12,9 @@
         </div>
     </div>
     <div class="flex-grow bg-subtleGray h-full flex items-center">
-        <div class=" w-[350px]  h-[330px] relative">
-            <img src="{{asset('/assets/images/web/heroHome1.png')}}" alt="hero1" class="absolute top-0 right-0 w-[300px] h-[200px]">
-            <img src="{{asset('/assets/images/web/heroHome2.png')}}" alt="hero2" class="absolute bottom-0 -left-10 w-[300px] h-[200px]">
+        <div class=" w-[350px] h-[330px] 2xl:w-[600px] 2xl:h-[600px] relative">
+            <img src="{{asset('/assets/images/web/heroHome1.png')}}" alt="hero1" class="absolute top-0 right-0 w-[300px] h-[200px] 2xl:w-fit 2xl:h-fit">
+            <img src="{{asset('/assets/images/web/heroHome2.png')}}" alt="hero2" class="absolute bottom-0 -left-10 w-[300px] h-[200px] 2xl:w-fit 2xl:h-fit">
         </div>
     </div>
 </div>

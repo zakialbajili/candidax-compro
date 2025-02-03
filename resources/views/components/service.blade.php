@@ -2,11 +2,11 @@
     <div class="px-[10%] pb-10 pt-[100px] bg-jungleGreen flex-grow">
         <div class="flex justify-evenly gap-10 text-white">
             <div class="w-[350px] 2xl:h-[643px] 2xl:w-[550px] relative">
-                <h2 class="text-white text-xl 2xl:text-[32px] font-extrabold leading-[48px]">
+                <h2 class="text-white text-xl 2xl:text-[32px] font-extrabold leading-8 2xl:leading-[48px]">
                     Your satisfaction is our priority. <br />
                     <span class="text-primerText">Explore our premium services.</span>
                 </h2>
-                <div class=" flex flex-col gap-10 absolute -bottom-40">
+                <div class=" flex flex-col gap-10 absolute -bottom-20 2xl:-bottom-40">
                     <img src="{{asset('/assets/images/web/serviceImage.png')}}" alt="service image" class=" h-[400px] w-[300px] 2xl:h-[643px] 2xl:w-[510px]">
                 </div>
             </div>
