@@ -5,9 +5,9 @@
             <x-nav.linkNav href="/" label="Home"/>
             <x-nav.linkNav href="/company" label="Company"/>
             <x-nav.linkNav href="/collaboration" label="Collaboration"/>
-            <x-nav.linkNav href="/" label="Services"/>
+            <x-nav.linkNav href="/services" label="Services"/>
             <x-nav.linkNav href="/contact" label="Contact"/>
         </div>
-        <p class="p-[10px] bg-jungleGreen rounded-xl text-white">Contact Us</p>
+        <a href="/" class="p-[10px] bg-jungleGreen rounded-xl text-white">Contact Us</a>
     </nav>
 </header>

@@ -1,5 +1,5 @@
 <div class="w-full h-screen flex items-center font-poppins text-primerText">
-    <div class="w-full max-h-[552px] px-[5%] 2xl:px-[110px] flex justify-around gap-16 py-[100px] bg-subtleGray">
+    <div class="w-full max-h-[552px] px-[5%] 2xl:px-[110px] flex justify-evenly gap-16 py-[100px] bg-subtleGray">
         <div class="flex flex-col gap-5 w-[50%] max-w-[598px]">
             <h1 class="text-xl 2xl:text-[32px] text-jungleGreen font-extrabold leading-[48px]">
                 “Optimise HR Potential with Professional Programmes Based on 

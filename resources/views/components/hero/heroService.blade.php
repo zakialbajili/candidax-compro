@@ -1,19 +1,16 @@
-<div class=" w-full flex flex-col font-poppins">
-    <div class="bg-jungleGreen flex-grow relative">
-        <div class="absolute top-0 right-0 text-white">
-            <x-icons.ornamenHero width="479" height="499" />
-        </div>
-        <div class="flex justify-evenly px-[10%] pb-10 pt-[100px] gap-10 text-white">
+<div class=" w-full h-screen flex flex-col font-poppins justify-end">
+    <div class="absolute top-0 right-0 text-border">
+        <x-icons.ornamenHero width="479" height="499"/>
+    </div>
+    <div class="w-full h-[177px] bg-white"></div>
+    <div class="flex-grow px-[10%] pb-10 pt-[68px] bg-jungleGreen">
+        <div class="flex justify-evenly gap-10 text-white">
             <div class="w-[350px] 2xl:h-[643px] 2xl:w-[550px] relative">
-                <h2 class="text-white text-xl 2xl:text-[32px] font-extrabold leading-8 2xl:leading-[48px]">
-                    Your satisfaction is our priority. <br />
-                    <span class="text-primerText">Explore our premium services.</span>
-                </h2>
-                <div class=" flex flex-col gap-10 absolute -bottom-20 2xl:-bottom-40">
+                <div class=" flex flex-col gap-10 absolute -top-[15%]">
                     <img src="{{asset('/assets/images/web/serviceImage.png')}}" alt="service image" class=" h-[400px] w-[300px] 2xl:h-[643px] 2xl:w-[510px]">
                 </div>
             </div>
-            <div class="flex flex-col gap-5 self-end text-sm">
+            <div class="flex flex-col gap-5 text-sm">
                 <div class="flex gap-10">
                     <div class="h-[52px] w-[52px] rounded-xl bg-white flex items-center justify-center text-jungleGreen">
                         <x-icons.monitoringIcon />
@@ -53,5 +50,4 @@
             </div>
         </div>
     </div>
-    <div class="h-[177px] bg-white w-full"></div>
 </div>

@@ -3,8 +3,6 @@
 @section('title', 'Candidax | Contact')
 @section('content')
 <main>
-    <x-hero.heroContact/>
-    <x-listContact/>
-    <x-formConsultation/>
+    <x-hero.heroService/>
 </main>
 @endsection

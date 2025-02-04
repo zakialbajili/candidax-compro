@@ -5,7 +5,7 @@
 <main>
     <x-hero.heroCompany />
     <x-listFounders />
-    <div class="min-h-screen font-poppins text-white">
+    <div class="min-h-screen font-poppins text-white bg-subtleGray">
         <div class=" flex justify-evenly py-[45px] 2xl:px-[110px] bg-jungleGreen h-[552px] 2xl:gap-[70px]">
             <div class="flex-grow relative 2xl:max-w-[620px]">
                 <img src="{{asset('/assets/images/web/instructor_materi.png')}}" alt="Instructor Materi" class="w-fit h-fit absolute top-0 left-0">
@@ -20,9 +20,9 @@
             </div>
         </div>
     </div>
-    <div class=" pl-[110px] pt-[45px]">
+    <div class=" pl-[110px] pt-[45px] bg-subtleGray">
         <x-alittleArticle/>
     </div>
-    <x-alittleEvent/>
+    <x-alittleEvent class="bg-subtleGray"/>
 </main>
 @endsection

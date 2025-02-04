@@ -1,4 +1,4 @@
-<div class="mt-[81px] w-full px-[110px] flex flex-col gap-8 font-poppins text-primerText">
+<div class="pt-[81px] pb-[112px] w-full px-[110px] flex flex-col gap-8 font-poppins text-primerText bg-subtleGray">
     <h1 class="2xl:text-[32px] text font-extrabold">Event</h1>
     <div class="w-full flex justify-between gap-16">
         <div class="w-[50%] flex justify-between gap-[26px]">
@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <button class="self-center h-[47px] w-[209px] text-lg border-2 border-jungleGreen text-jungleGreen rounded-xl hover:border-0 hover:bg-jungleGreen hover:text-white">
+    <a href="/events" class="self-center h-[47px] w-[209px] text-lg border-2 border-jungleGreen text-jungleGreen rounded-xl hover:border-0 hover:bg-jungleGreen hover:text-white flex items-center justify-center">
         Lainnya
-    </button>
+    </a>
 </div>
