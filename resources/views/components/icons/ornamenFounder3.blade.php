@@ -1,8 +1,10 @@
+@props(['class' => ''])
 <svg
     width="347"
     height="361"
     viewBox="0 0 347 361"
     fill="none"
+    {{ $attributes->merge(['class' => $class]) }}
     xmlns="http://www.w3.org/2000/svg"
 >
     <circle cx="134.5" cy="134.5" r="134" transform="matrix(-0.913264 0.407369 0.407369 0.913264 371.957 -118.318)" stroke="white"/>

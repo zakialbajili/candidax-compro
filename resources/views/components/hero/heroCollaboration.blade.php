@@ -3,7 +3,7 @@
     </div>
     <div class="absolute inset-0 flex gap-10 2xl:gap-[100px] justify-around items-center px-[10%]">
         <div class="flex flex-col gap-5 w-[50%] max-w-[598px]">
-            <h1 class="text-xl 2xl:text-[32px] leading-8 2xl:leading-[48px] text-jungleGreen font-extrabold">
+            <h1 class="text-2xl 2xl:text-[32px] leading-8 2xl:leading-[48px] text-jungleGreen font-extrabold text-nowrap">
                 Jangan ragu untuk berkolaborasi, <br />
                 <span class="text-primerText">mari capai tujuan besar anda bersama kami!</span>
             </h1>

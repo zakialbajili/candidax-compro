@@ -7,12 +7,12 @@
     <x-listFounders />
     <div class="min-h-screen font-poppins text-white bg-subtleGray">
         <div class=" flex justify-evenly py-[45px] 2xl:px-[110px] bg-jungleGreen h-[552px] 2xl:gap-[70px]">
-            <div class="flex-grow relative 2xl:max-w-[620px]">
-                <img src="{{asset('/assets/images/web/instructor_materi.png')}}" alt="Instructor Materi" class="w-fit h-fit absolute top-0 left-0">
-                <img src="{{asset('/assets/images/web/rais_provide_materi.png')}}" alt="Rais Provide Materi" class="w-fit h-fit absolute -bottom-[60%] right-0">
+            <div class="flex-grow relative max-w-[370px] max-h-[290px] 2xl:max-w-[620px] 2xl:max-h-fit">
+                <img src="{{asset('/assets/images/web/instructor_materi.png')}}" alt="Instructor Materi" class="2xl:w-fit 2xl:h-fit w-[337px] h-[220px] absolute top-0 left-0">
+                <img src="{{asset('/assets/images/web/rais_provide_materi.png')}}" alt="Rais Provide Materi" class="2xl:w-fit 2xl:h-fit w-[203px] h-[351px] absolute -bottom-[60%] right-0">
             </div>
             <div class="w-[50%] max-w-[598px] flex flex-col gap-5 items-center justify-center">
-                <h1 class="text-xl 2xl:text-[32px] font-extrabold leading-[48px]">
+                <h1 class="text-xl 2xl:text-[32px] font-extrabold leading-8 2xl:leading-[48px]">
                     Tingkatkan Potensi dan Peluang Karir Anda
                     <span class="text-primerText">bersama Program Berkualitas Kami!</span>
                 </h1>

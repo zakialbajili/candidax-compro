@@ -1,12 +1,13 @@
-<div class=" w-full h-screen flex flex-col font-poppins justify-end">
-    <div class="absolute top-0 right-0 text-border">
-        <x-icons.ornamenHero width="479" height="499"/>
+<div class=" w-full flex flex-col font-poppins justify-end">
+    <div class="w-full h-[177px] bg-white relative">
+        <div class="absolute top-0 right-0 text-border">
+            <x-icons.ornamenHero class=" 2xl:w-[479px] h-[499px] w-[247px] "/>
+        </div>
     </div>
-    <div class="w-full h-[177px] bg-white"></div>
     <div class="flex-grow px-[10%] pb-10 pt-[68px] bg-jungleGreen">
         <div class="flex justify-evenly gap-10 text-white">
             <div class="w-[350px] 2xl:h-[643px] 2xl:w-[550px] relative">
-                <div class=" flex flex-col gap-10 absolute -top-[15%]">
+                <div class=" flex flex-col gap-10 absolute -top-[25%] 2xl:-top-[15%]">
                     <img src="{{asset('/assets/images/web/serviceImage.png')}}" alt="service image" class=" h-[400px] w-[300px] 2xl:h-[643px] 2xl:w-[510px]">
                 </div>
             </div>
