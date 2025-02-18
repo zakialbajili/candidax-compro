@@ -1,10 +1,10 @@
-<div class="w-full bg-subtleGray py-10 px-[110px] flex justify-around gap-[38px] font-poppins">
-    <div class="w-[70%] max-w-[700px] 2xl:max-w-[900px] h-[650px] 2xl:h-[700px] relative">
-        <img src="{{asset('/assets/images/web/heroCollaboration.png')}}" alt="Contact Form Image 1" class="2xl:w-fit 2xl:h-fit w-[439px] h-[259px] absolute top-0 left-0">
-        <img src="{{asset('/assets/images/web/example_article.png')}}" alt="Contact Form Image 1" class="w-fit h-fit absolute top-1/4 left-[35%] z-10">
-        <img src="{{asset('/assets/images/web/contactForm.png')}}" alt="Contact Form Image 1" class="2xl:w-fit 2xl:h-fit w-[373px] h-[240px]  absolute bottom-0 right-0">
+<div class="w-full min-h-screen lg:h-fit bg-subtleGray py-10 px-[5%] flex flex-col lg:flex-row lg:justify-around gap-[38px] font-poppins">
+    <div class="shrink-0 w-full lg:w-[70%] max-w-[700px] 2xl:max-w-[900px] h-[60vh] lg:h-[650px] 2xl:h-[700px] relative">
+        <img src="{{asset('/assets/images/web/heroCollaboration.png')}}" alt="Contact Form Image 1" class="2xl:w-fit 2xl:h-fit lg:w-[439px] lg:h-[259px] w-[60%] h-fit absolute top-0 left-0">
+        <img src="{{asset('/assets/images/web/example_article.png')}}" alt="Contact Form Image 1" class="lg:w-fit lg:h-fit w-[40%] h-fit absolute top-1/4 left-[35%] z-10">
+        <img src="{{asset('/assets/images/web/contactForm.png')}}" alt="Contact Form Image 1" class="2xl:w-fit 2xl:h-fit lg:w-[373px] lg:h-[240px] w-[60%] h-fit absolute bottom-0 right-0">
     </div>
-    <form action="" class="p-5 flex flex-col gap-5 min-w-[374px] text-xs text-primerText">
+    <form action="" class="lg:p-5 flex flex-col gap-5 w-full lg:min-w-[374px] text-xs text-primerText">
         <h1 class="text-2xl font-semibold text-jungleGreen">Bermitra Sekarang!</h1>
         <div class="w-full flex flex-col gap-[10px]">
             <label for="name"><span class="text-cherryRed">*</span>  Nama Lengkap</label>

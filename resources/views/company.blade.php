@@ -6,12 +6,13 @@
     <x-hero.heroCompany />
     <x-listFounders />
     <div class="min-h-screen font-poppins text-white bg-subtleGray">
-        <div class=" flex justify-evenly py-[45px] 2xl:px-[110px] bg-jungleGreen h-[552px] 2xl:gap-[70px]">
-            <div class="flex-grow relative max-w-[370px] max-h-[290px] 2xl:max-w-[620px] 2xl:max-h-fit">
-                <img src="{{asset('/assets/images/web/instructor_materi.png')}}" alt="Instructor Materi" class="2xl:w-fit 2xl:h-fit w-[337px] h-[220px] absolute top-0 left-0">
-                <img src="{{asset('/assets/images/web/rais_provide_materi.png')}}" alt="Rais Provide Materi" class="2xl:w-fit 2xl:h-fit w-[203px] h-[351px] absolute -bottom-[60%] right-0">
+        <div class=" flex justify-center lg:justify-evenly flex-col items-center lg:flex-row py-[45px] 2xl:px-[110px] bg-jungleGreen lg:h-[552px] gap-[70px] gap-y-[10px] px-[5%]">
+            <div class="relative w-full lg:max-w-[50%] h-full">
+                <img src="{{asset('/assets/images/web/cek.png')}}"
+                    alt="Instructor Materi"
+                    class="w-full h-fit">
             </div>
-            <div class="w-[50%] max-w-[598px] flex flex-col gap-5 items-center justify-center">
+            <div class="w-full lg:w-[50%] lg:max-w-[598px] flex flex-col gap-5 items-center justify-center">
                 <h1 class="text-xl 2xl:text-[32px] font-extrabold leading-8 2xl:leading-[48px]">
                     Tingkatkan Potensi dan Peluang Karir Anda
                     <span class="text-primerText">bersama Program Berkualitas Kami!</span>
@@ -20,9 +21,9 @@
             </div>
         </div>
     </div>
-    <div class=" pl-[110px] pt-[45px] bg-subtleGray">
-        <x-alittleArticle/>
+    <div class=" pl-10 lg:pl-[110px] pt-[45px] bg-subtleGray">
+        <x-alittleArticle />
     </div>
-    <x-alittleEvent class="bg-subtleGray"/>
+    <x-alittleEvent class="bg-subtleGray" />
 </main>
 @endsection

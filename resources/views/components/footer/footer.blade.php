@@ -1,8 +1,8 @@
 <footer class="bg-white py-[100px] flex justify-center font-poppins font-medium w-full">
-    <div class="flex justify-between w-[80%]">
+    <div class="flex justify-between flex-wrap gap-5 w-[80%]">
         <div>
             <img src="{{ asset( '/assets/images/web/logo_candidax.png' )}}" alt="logo" class="mb-2">
-            <div class="flex flex-col gap-1 text-primerText">
+            <div class="flex flex-col gap-1 text-primerText text-wrap">
                 <div class="flex gap-5">
                     <x-icons.placeIcon/>
                     <p>dolor amet</p>
@@ -13,7 +13,7 @@
                 </div>
                 <div class="flex gap-5">
                     <x-icons.linkedInIcon/>
-                    <p>linkedin.com/company/candidax</p>
+                    <p>Linkedin</p>
                 </div>
                 <div class="flex gap-5">
                     <x-icons.instagramIcon/>
