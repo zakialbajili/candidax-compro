@@ -7,6 +7,7 @@
             <x-nav.linkNav href="/collaboration" label="Collaboration"/>
             <x-nav.linkNav href="/services" label="Services"/>
             <x-nav.linkNav href="/contact" label="Contact"/>
+            <x-nav.linkNav href="/admin" label="Admin"/>
         </div>
         <a href="/" class="hidden lg:block p-[10px] bg-jungleGreen rounded-xl text-white">Contact Us</a>
         <button class="block lg:hidden"><x-icons.hamburgerIcon/></button>

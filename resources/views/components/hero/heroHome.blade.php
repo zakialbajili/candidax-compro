@@ -1,5 +1,5 @@
 <div class="flex w-full flex-col-reverse gap-y-10 lg:flex-row h-screen font-poppins mt-[157px] mb-10 lg:my-0">
-    <div class="bg-white w-full lg:w-[60%] h-full flex items-center justify-center px-5">
+    <div class="bg-white w-full lg:w-[60%] lg:h-full flex items-center justify-center px-5">
         <img src="{{ asset('/assets/images/web/ornamen_circle.png')}}" alt="ornamen" class="absolute top-0 left-0 2xl:w-fit 2xl:h-fit h-[300px] w-[203px]">
         <div class="flex flex-col gap-10">
             <div class="text-primerText max-w-[598px]">

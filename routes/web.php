@@ -23,3 +23,27 @@ Route::get('/articles', function () {
 Route::get('/events', function () {
     return view('events');
 });
+Route::get('/admin', function () {
+    return view('admin');
+});
+Route::get('/admin/login', function () {
+    return view('adminLogin');
+});
+Route::get('/admin/article/add', function () {
+    return view('addArticle');
+});
+Route::get('/admin/event/add', function () {
+    return view('addEvent');
+});
+Route::get('/admin/partner/add', function () {
+    return view('addPartner');
+});
+Route::get('/admin/article/edit', function () {
+    return view('editArticle');
+});
+Route::get('/admin/event/edit', function () {
+    return view('editEvent');
+});
+Route::get('/admin/partner/edit', function () {
+    return view('editPartner');
+});
