@@ -1,3 +1,4 @@
+@props(["events"])
 <div class="w-full bg-subtleGray px-[10%] py-10 flex flex-col gap-y-5">
     <div class="w-full flex justify-between">
         <p>TES</p>
@@ -28,21 +29,33 @@
             </tr>
         </thead>
         <tbody>
+            @if(is_object($events))
+            @foreach($events as $event)
             <tr>
                 <td class="p-5">
-                    <img src="{{asset('/assets/images/web/serviceImage.png')}}" alt="thumbnail article" class="w-[160px] h-[178px]">
+                    @if($event->foto)
+                        <img src="{{asset('/storage/image/'.$event->foto)}}" alt="{{$event->foto}}" class="w-[160px] h-[178px]">
+                    @endif
                 </td>
                 <td class="p-5">
-                    <p>Lorem ipsum dolor sit</p>
+                    <p>{{ $event->title }}</p>
                 </td>
                 <td class="p-5">
-                    <p>Lorem ipsum dolor sit</p>
+                    <p>{{ $event->description }}</p>
                 </td>
                 <td class="p-5">
-                    <p>21 Februari 2025</p>
+                    @php
+                    $eventDate = \Carbon\Carbon::parse($event->event_date);
+                    $today = now()
+                    @endphp
+                    <p>{{ date_format($eventDate, "j F Y") }}</p>
                 </td>
                 <td class="p-5">
+                    @if($eventDate->isPast())
+                    <div class="rounded-xl p-[10px] bg-cherryRed w-fit text-white">Past</div>
+                    @else
                     <div class="rounded-xl p-[10px] bg-softBlue w-fit text-white">Active</div>
+                    @endif
                 </td>
                 <td>
                     <div class="flex gap-5 justify-center items-center">
@@ -55,6 +68,12 @@
                     </div>
                 </td>
             </tr>
+            @endforeach
+            @else
+            <tr>
+                <td colspan="5" class="text-center py-5">No articles available</td>
+            </tr>
+            @endif
         </tbody>
     </table>
 </div>

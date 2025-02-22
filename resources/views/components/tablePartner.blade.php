@@ -1,3 +1,4 @@
+@props(["partners"])
 <div class="w-full bg-subtleGray px-[10%] py-10 flex flex-col gap-y-5">
     <div class="w-full flex justify-between">
         <p>TES</p>
@@ -27,30 +28,38 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="p-5">
-                    <img src="{{asset('/assets/images/web/client1.png')}}" alt="thumbnail article" class="w-[160px] h-[178px]">
-                </td>
-                <td class="p-5"> <p>Lorem ipsum dolor sit</p></td>
-                <td class="p-5"><p>Lorem ipsum dolor sit</p> </td>
-                <td class="p-5">
-                    <div class="flex gap-2 text-gold">
-                        @for( $i=0; $i<5; $i++)
-                            <x-icons.starIcon/>
-                        @endfor
-                    </div>
-                </td>
-                <td>
-                    <div class="flex gap-5 justify-center items-center">
-                        <a href="/admin/partner/edit">
-                            <x-icons.editIcon/>
-                        </a>
-                        <button class="text-cherryRed">
-                            <x-icons.trashIcon/>
-                        </button>
-                    </div>
-                </td>
-            </tr>
+            @if(is_object($partners))
+                @foreach($partners as $partner)
+                    <tr>
+                        <td class="p-5">
+                            <img src="{{asset('/assets/images/web/client1.png')}}" alt="thumbnail article" class="w-[160px] h-[178px]">
+                        </td>
+                        <td class="p-5"> <p>{{ $partner->name }}</p></td>
+                        <td class="p-5"><p>{{ $partner->testimony }}</p> </td>
+                        <td class="p-5">
+                            <div class="flex gap-2 text-gold">
+                                @for( $i=0; $i<5; $i++)
+                                    <x-icons.starIcon/>
+                                @endfor
+                            </div>
+                        </td>
+                        <td>
+                            <div class="flex gap-5 justify-center items-center">
+                                <a href="/admin/partner/edit">
+                                    <x-icons.editIcon/>
+                                </a>
+                                <button class="text-cherryRed">
+                                    <x-icons.trashIcon/>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+            @else
+                <tr>
+                    <td colspan="5" class="text-center py-5">No articles available</td>
+                </tr>
+            @endif
         </tbody>
     </table>
 </div>

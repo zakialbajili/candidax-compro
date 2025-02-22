@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,9 +26,9 @@ Route::get('/articles', function () {
 Route::get('/events', function () {
     return view('events');
 });
-Route::get('/admin', function () {
-    return view('admin');
-});
+
+//Admin GET
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/login', function () {
     return view('adminLogin');
 });
@@ -47,3 +50,7 @@ Route::get('/admin/event/edit', function () {
 Route::get('/admin/partner/edit', function () {
     return view('editPartner');
 });
+
+//Admin POST
+Route::post('/api/create/article', [ArticleController::class,'createArticle'])->name('admin.createArticle');
+Route::post('/api/create/event', [EventController::class,'createEvent'])->name('admin.createEvent');

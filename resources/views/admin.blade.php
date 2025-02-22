@@ -6,15 +6,15 @@
     <div class="flex flex-col gap-20">
         <article>
             <h1 class="font-semibold text-2xl px-[10%] mb-5">Article List</h1>
-            <x-tableArticle/>
+            <x-tableArticle :articles="$articles"/>
         </article>
         <article>
             <h1 class="font-semibold text-2xl px-[10%] mb-5">Event List</h1>
-            <x-tableEvent/>
+            <x-tableEvent :events="$events"/>
         </article>
         <article>
             <h1 class="font-semibold text-2xl px-[10%] mb-5">Partner & Client List</h1>
-            <x-tablePartner/>
+            <x-tablePartner :partners="$partners"/>
         </article>
     </div>
 </main>

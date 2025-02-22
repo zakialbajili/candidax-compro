@@ -1,3 +1,4 @@
+@props(["articles"])
 <div class="w-full bg-subtleGray px-[10%] py-10 flex flex-col gap-y-5">
     <div class="w-full flex justify-between">
         <p>TES</p>
@@ -27,30 +28,40 @@
             </tr>
         </thead>
         <tbody>
+            @if(is_object($articles))
+                @foreach($articles as $article )
+                <tr>
+                    <td class="p-5">
+                        @if($article->foto)
+                        <img src="{{asset('/storage/image/'.$article->foto)}}" alt="{{$article->foto}}" class="w-[160px] h-[178px]">
+                        @endif
+                    </td>
+                    <td class="p-5">
+                        <p>{{$article->title}}</p>
+                    </td>
+                    <td class="p-5">
+                        <p>{{$article->description}}</p>
+                    </td>
+                    <td class="p-5">
+                        <div class="rounded-xl p-[10px] bg-softBlue w-fit text-white">Active</div>
+                    </td>
+                    <td>
+                        <div class="flex gap-5 justify-center items-center">
+                            <a href="/admin/article/edit">
+                                <x-icons.editIcon />
+                            </a>
+                            <button class="text-cherryRed">
+                                <x-icons.trashIcon />
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+            @else
             <tr>
-                <td class="p-5">
-                    <img src="{{asset('/assets/images/web/serviceImage.png')}}" alt="thumbnail article" class="w-[160px] h-[178px]">
-                </td>
-                <td class="p-5">
-                    <p>Lorem ipsum dolor sit</p>
-                </td>
-                <td class="p-5">
-                    <p>Lorem ipsum dolor sit</p>
-                </td>
-                <td class="p-5">
-                    <div class="rounded-xl p-[10px] bg-softBlue w-fit text-white">Active</div>
-                </td>
-                <td>
-                    <div class="flex gap-5 justify-center items-center">
-                        <a href="/admin/article/edit">
-                            <x-icons.editIcon />
-                        </a>
-                        <button class="text-cherryRed">
-                            <x-icons.trashIcon />
-                        </button>
-                    </div>
-                </td>
+                <td colspan="5" class="text-center py-5">No articles available</td>
             </tr>
+            @endif
         </tbody>
     </table>
 </div>
