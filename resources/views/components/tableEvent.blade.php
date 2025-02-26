@@ -59,7 +59,7 @@
                 </td>
                 <td>
                     <div class="flex gap-5 justify-center items-center">
-                        <a href="/admin/event/edit">
+                        <a href="{{'/admin/event/edit/'. $event->id}}">
                             <x-icons.editIcon />
                         </a>
                         <button class="text-cherryRed">

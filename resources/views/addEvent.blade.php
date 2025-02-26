@@ -52,7 +52,7 @@
                         id="event_date"
                         placeholder="Masukkan content"
                         class="py-[10px] px-3 rounded-xl border-2 border-primerText"/>
-                    @error('description')
+                    @error('event_date')
                     <p class="text-cherryRed">{{$message}}</p>
                     @enderror
                 </div>

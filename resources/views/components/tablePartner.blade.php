@@ -32,14 +32,24 @@
                 @foreach($partners as $partner)
                     <tr>
                         <td class="p-5">
-                            <img src="{{asset('/assets/images/web/client1.png')}}" alt="thumbnail article" class="w-[160px] h-[178px]">
+                            @if(!empty($partner->foto))
+                            <img src="{{asset('/storage/image/'. $partner->foto)}}" alt="{{$partner->foto}}" class="w-[160px] h-[178px]">
+                            @endif
                         </td>
                         <td class="p-5"> <p>{{ $partner->name }}</p></td>
                         <td class="p-5"><p>{{ $partner->testimony }}</p> </td>
                         <td class="p-5">
-                            <div class="flex gap-2 text-gold">
+                            <div class="flex gap-2">
                                 @for( $i=0; $i<5; $i++)
-                                    <x-icons.starIcon/>
+                                    @if($i < $partner->rating)
+                                        <span class="text-gold">
+                                            <x-icons.starIcon/>
+                                        </span>
+                                    @else
+                                        <span class="text-primerText">
+                                            <x-icons.starIcon/>
+                                        </span>
+                                    @endif
                                 @endfor
                             </div>
                         </td>

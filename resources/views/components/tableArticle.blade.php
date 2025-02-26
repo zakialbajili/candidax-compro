@@ -47,7 +47,7 @@
                     </td>
                     <td>
                         <div class="flex gap-5 justify-center items-center">
-                            <a href="/admin/article/edit">
+                            <a href="{{'/admin/article/edit/'.$article->id}}">
                                 <x-icons.editIcon />
                             </a>
                             <button class="text-cherryRed">
