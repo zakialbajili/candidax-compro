@@ -33,7 +33,7 @@
                     <tr>
                         <td class="p-5">
                             @if(!empty($partner->foto))
-                            <img src="{{asset('/storage/image/'. $partner->foto)}}" alt="{{$partner->foto}}" class="w-[160px] h-[178px]">
+                            <img src="{{asset('/storage/image/'. $partner->foto)}}" alt="{{$partner->foto}}" class="max-w-[160px] max-h-[178px]">
                             @endif
                         </td>
                         <td class="p-5"> <p>{{ $partner->name }}</p></td>
@@ -55,10 +55,14 @@
                         </td>
                         <td>
                             <div class="flex gap-5 justify-center items-center">
-                                <a href="/admin/partner/edit">
+                                <a href="{{'/admin/partner/edit/'.$partner->id}}">
                                     <x-icons.editIcon/>
                                 </a>
-                                <button class="text-cherryRed">
+                                <button
+                                    class="openModalPartner text-cherryRed"
+                                    data-id="{{$partner->id}}"
+                                    data-name="{{$partner->name}}"
+                                >
                                     <x-icons.trashIcon/>
                                 </button>
                             </div>
@@ -72,4 +76,22 @@
             @endif
         </tbody>
     </table>
+    <x-modal.modalDeletePartner />
 </div>
+<script>
+    const modalDeletePartnerText = document.getElementById("modalDeletePartnerText");
+    const btnOpenModalPartner = document.getElementById('openModalPartner');
+    document.addEventListener("DOMContentLoaded", function(){
+        const deletePartnerForm = document.getElementById('deletePartnerForm');
+        document.querySelectorAll('.openModalPartner').forEach(button => {
+            button.addEventListener("click", function(){
+                const PartnerName = this.getAttribute("data-name");
+                const PartnerId = this.getAttribute("data-id");
+                modalPartner.classList.remove('hidden');
+                modalPartner.classList.add('flex');
+                modalDeletePartnerText.innerHTML = `Are you sure want to delete Partner <span class="font-bold">"${PartnerName}"</span> ?`
+                deletePartnerForm.action = `/api/delete/partner/${PartnerId}`
+            })
+        })
+    })
+</script>

@@ -1,8 +1,8 @@
 @extends('layout.main')
 
-@section('title', 'Login | Candidax')
+@section('title', 'Add Article | Candidax')
 @section('content')
-<main class="w-full h-screen flex items-center justify-center font-poppins text-primerText">
+<main class="w-full h-screen flex items-center justify-center font-poppins text-primerText pt-[200px]">
     <div class="w-full h-fit rounded-xl flex flex-col gap-10 px-[5%]">
         <a
             href="/admin"

@@ -44,12 +44,13 @@ Route::get('/admin/partner/add', function () {
 });
 Route::get('/admin/article/edit/{id}', [ArticleController::class, 'indexEditArticle'])->name('admin.indexEditArticle');
 Route::get('/admin/event/edit/{id}', [EventController::class, 'indexEditArticle'])->name('admin.indexEditArticle');
-Route::get('/admin/event/edit', function () {
-    return view('editEvent');
-});
-Route::get('/admin/partner/edit', function () {
-    return view('editPartner');
-});
+Route::get('/admin/partner/edit/{id}', [PartnerController::class, 'indexEditPartner'])->name('admin.indexEditPartner');
+// Route::get('/admin/event/edit', function () {
+//     return view('editEvent');
+// });
+// Route::get('/admin/partner/edit', function () {
+//     return view('editPartner');
+// });
 
 //Admin POST
 Route::post('/api/create/article', [ArticleController::class,'createArticle'])->name('admin.createArticle');
@@ -59,3 +60,9 @@ Route::post('/api/create/partner', [PartnerController::class,'createPartner'])->
 //Admin PUT
 Route::put('/api/edit/article/{id}', [ArticleController::class,'editArticle'])->name('admin.editArticle');
 Route::put('/api/edit/event/{id}', [EventController::class,'editEvent'])->name('admin.editEvent');
+Route::put('/api/edit/partner/{id}', [PartnerController::class,'editPartner'])->name('admin.editPartner');
+
+//Admin DELETE
+Route::delete('/api/delete/article/{id}', [ArticleController::class, 'deleteArticle'])->name('admin.deleteArticle');
+Route::delete('/api/delete/event/{id}', [EventController::class, 'deleteEvent'])->name('admin.deleteEvent');
+Route::delete('/api/delete/partner/{id}', [PartnerController::class, 'deletePartner'])->name('admin.deletePartner');

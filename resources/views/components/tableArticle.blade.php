@@ -33,7 +33,7 @@
                 <tr>
                     <td class="p-5">
                         @if($article->foto)
-                        <img src="{{asset('/storage/image/'.$article->foto)}}" alt="{{$article->foto}}" class="w-[160px] h-[178px]">
+                        <img src="{{asset('/storage/image/'.$article->foto)}}" alt="{{$article->foto}}" class="max-w-[160px] max-h-[178px]">
                         @endif
                     </td>
                     <td class="p-5">
@@ -50,7 +50,11 @@
                             <a href="{{'/admin/article/edit/'.$article->id}}">
                                 <x-icons.editIcon />
                             </a>
-                            <button class="text-cherryRed">
+                            <button
+                                class="openModalArticle text-cherryRed"
+                                data-title="{{ $article->title }}"
+                                data-id="{{ $article->id }}"
+                            >
                                 <x-icons.trashIcon />
                             </button>
                         </div>
@@ -64,4 +68,23 @@
             @endif
         </tbody>
     </table>
+    <x-modal.modalDeleteArticle/>
 </div>
+<script>
+    const modal = document.getElementById("modalArticle");
+    const modalText = document.getElementById("modalDeleteArticleText");
+    const btnOpenModalArticle = document.getElementById('openModalArticle');
+    document.addEventListener("DOMContentLoaded", function(){
+        const deleteForm = document.getElementById('deleteArticleForm');
+        document.querySelectorAll('.openModalArticle').forEach(button => {
+            button.addEventListener("click", function(){
+                const articleTitle = this.getAttribute("data-title");
+                const articleId = this.getAttribute("data-id");
+                modalArticle.classList.remove('hidden');
+                modalArticle.classList.add('flex');
+                modalText.innerHTML = `Are you sure want to delete article <span class="font-bold">"${articleTitle}"</span> ?`
+                deleteForm.action = `/api/delete/article/${articleId}`
+            })
+        })
+    })
+</script>

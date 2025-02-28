@@ -87,5 +87,10 @@ class EventController extends Controller
         ]);
         return redirect()->route('admin.index');
     }
+    public function deleteEvent(string $id)
+    {
+        Event::destroy($id);
+        return redirect()->route('admin.index');
+    }
     //
 }

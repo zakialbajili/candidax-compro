@@ -34,7 +34,7 @@
             <tr>
                 <td class="p-5">
                     @if($event->foto)
-                        <img src="{{asset('/storage/image/'.$event->foto)}}" alt="{{$event->foto}}" class="w-[160px] h-[178px]">
+                    <img src="{{asset('/storage/image/'.$event->foto)}}" alt="{{$event->foto}}" class="max-w-[160px] max-h-[178px]">
                     @endif
                 </td>
                 <td class="p-5">
@@ -62,7 +62,11 @@
                         <a href="{{'/admin/event/edit/'. $event->id}}">
                             <x-icons.editIcon />
                         </a>
-                        <button class="text-cherryRed">
+                        <button
+                            class="openModalEvent text-cherryRed"
+                            data-id="{{$event->id}}"
+                            data-title="{{$event->title}}"
+                        >
                             <x-icons.trashIcon />
                         </button>
                     </div>
@@ -71,9 +75,27 @@
             @endforeach
             @else
             <tr>
-                <td colspan="5" class="text-center py-5">No articles available</td>
+                <td colspan="5" class="text-center py-5">No Event available</td>
             </tr>
             @endif
         </tbody>
     </table>
+    <x-modal.modalDeleteEvent />
 </div>
+<script>
+    const modalDeleteEventText = document.getElementById("modalDeleteEventText");
+    const btnOpenModalEvent = document.getElementById('openModalEvent');
+    document.addEventListener("DOMContentLoaded", function(){
+        const deleteEventForm = document.getElementById('deleteEventForm');
+        document.querySelectorAll('.openModalEvent').forEach(button => {
+            button.addEventListener("click", function(){
+                const EventName = this.getAttribute("data-title");
+                const EventId = this.getAttribute("data-id");
+                modalEvent.classList.remove('hidden');
+                modalEvent.classList.add('flex');
+                modalDeleteEventText.innerHTML = `Are you sure want to delete Event <span class="font-bold">"${EventName}"</span> ?`
+                deleteEventForm.action = `/api/delete/event/${EventId}`
+            })
+        })
+    })
+</script>

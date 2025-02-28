@@ -88,5 +88,9 @@ class ArticleController extends Controller
         ]);
         return redirect()->route('admin.index');
     }
+    public function deleteArticle(string $id){
+        Article::destroy($id);
+        return redirect()->route('admin.index');
+    }
     //
 }
