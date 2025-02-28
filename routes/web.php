@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PartnerController;
 use Illuminate\Support\Facades\Route;
@@ -45,12 +46,10 @@ Route::get('/admin/partner/add', function () {
 Route::get('/admin/article/edit/{id}', [ArticleController::class, 'indexEditArticle'])->name('admin.indexEditArticle');
 Route::get('/admin/event/edit/{id}', [EventController::class, 'indexEditArticle'])->name('admin.indexEditArticle');
 Route::get('/admin/partner/edit/{id}', [PartnerController::class, 'indexEditPartner'])->name('admin.indexEditPartner');
-// Route::get('/admin/event/edit', function () {
-//     return view('editEvent');
-// });
-// Route::get('/admin/partner/edit', function () {
-//     return view('editPartner');
-// });
+
+//Auth POST
+Route::post('/api/auth/user/regist', [AuthController::class, 'registerUser'])->name('admin.registerUser');
+Route::post('/api/auth/user/login', [AuthController::class, 'loginUser'])->name('admin.loginUser');
 
 //Admin POST
 Route::post('/api/create/article', [ArticleController::class,'createArticle'])->name('admin.createArticle');
