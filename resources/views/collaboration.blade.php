@@ -8,7 +8,7 @@
         <h2 class="text-center text-jungleGreen text-2xl 2xl:text-[32px] leading-8 2xl:leading-[48px] font-extrabold px-[10%] mb-10">
             Our Partner & Client
         </h2>
-        <x-sliderTestimoni/>
+        <x-slider-testimoni/>
     </div>
 </main>
 @endsection

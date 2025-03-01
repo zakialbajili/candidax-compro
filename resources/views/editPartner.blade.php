@@ -2,7 +2,7 @@
 
 @section('title', 'Edit Partner | Candidax')
 @section('content')
-<main class="w-full h-screen flex items-center justify-center font-poppins text-primerText pt-[200px]">
+<main class="w-full min-h-screen flex items-center justify-center font-poppins text-primerText pt-[200px]">
     <div class="w-full h-fit rounded-xl flex flex-col gap-10 px-[5%]">
         <a
             href="/admin"
@@ -50,10 +50,38 @@
                         id="name"
                         name="name"
                         type="text"
-                        placeholder="Masukkan title"
+                        placeholder="Masukkan nama"
                         class="py-[10px] px-3 rounded-xl border-2 border-primerText"
                         value="{{$detailPartner['name']}}" />
                     @error('name')
+                    <p class="text-xs text-cherryRed">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="w-full flex flex-col gap-[10px]">
+                    <label for="position"><span class="text-cherryRed">*</span> Position</label>
+                    <input
+                        id="position"
+                        name="position"
+                        type="text"
+                        placeholder="Jelaskan posisi"
+                        class="py-[10px] px-3 rounded-xl border-2 border-primerText"
+                        value="{{$detailPartner['position']}}" />
+                    @error('position')
+                    <p class="text-xs text-cherryRed">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="w-full flex flex-col gap-[10px]">
+                    <label for="status"><span class="text-cherryRed">*</span> Status</label>
+                    <select
+                        name="status"
+                        id="status"
+                        class="py-[10px] px-3 rounded-xl border-2 border-primerText"
+                        value
+                    >
+                        <option value="HIDE" {{ $detailPartner['isShow'] === 'HIDE' ? 'selected' : '' }}>HIDE</option>
+                        <option value="SHOW" {{ $detailPartner['isShow'] === 'SHOW' ? 'selected' : '' }}>SHOW</option>
+                    </select>
+                    @error('status')
                     <p class="text-xs text-cherryRed">{{$message}}</p>
                     @enderror
                 </div>

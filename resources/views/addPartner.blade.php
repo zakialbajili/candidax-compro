@@ -2,7 +2,7 @@
 
 @section('title', 'Add Partner | Candidax')
 @section('content')
-<main class="w-full h-screen flex items-center justify-center font-poppins text-primerText pt-[200px]">
+<main class="w-full min-h-screen flex items-center justify-center font-poppins text-primerText pt-[200px]">
     <div class="w-full h-fit rounded-xl flex flex-col gap-10 px-[5%]">
         <a
             href="/admin"
@@ -41,6 +41,28 @@
                         placeholder="Masukkan title"
                         class="py-[10px] px-3 rounded-xl border-2 border-primerText" />
                     @error('name')
+                    <p class="text-xs text-cherryRed">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="w-full flex flex-col gap-[10px]">
+                    <label for="position"><span class="text-cherryRed">*</span> Position</label>
+                    <input
+                        id="position"
+                        name="position"
+                        type="text"
+                        placeholder="Jelaskan posisi"
+                        class="py-[10px] px-3 rounded-xl border-2 border-primerText"/>
+                    @error('position')
+                    <p class="text-xs text-cherryRed">{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="w-full flex flex-col gap-[10px]">
+                    <label for="status"><span class="text-cherryRed">*</span> Status</label>
+                    <select name="status" id="status" class="py-[10px] px-3 rounded-xl border-2 border-primerText">
+                        <option value="HIDE">HIDE</option>
+                        <option value="SHOW">SHOW</option>
+                    </select>
+                    @error('status')
                     <p class="text-xs text-cherryRed">{{$message}}</p>
                     @enderror
                 </div>

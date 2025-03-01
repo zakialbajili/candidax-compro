@@ -12,7 +12,9 @@ class Partner extends Model
         "name",
         "testimony",
         "rating",
-        "foto"
+        "foto",
+        "status",
+        "position"
     ];
     //
 }

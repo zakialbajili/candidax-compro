@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Partner;
-use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,16 +21,21 @@ class PartnerController extends Controller
                 "name" => "required|max:200",
                 "testimony" => "required",
                 "rating" => "required",
-                "foto" => "nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048"
+                "foto" => "nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
+                "position" => "required|max:255",
+                "status" => "required"
             ],
             [
                 "name.required" => "Name field must fill",
                 "name.max" => "Name must not more 200 characters",
+                "position.required" => "Position field must fill",
+                "position.max" => "Position must not more 255 characters",
                 "testimony.required" => "Content Field must fill",
                 "rating.required" => "Rating must fill",
                 "foto.max" => "Maximal size for photo is 2 MB",
                 "foto.mimes" => "File extension only jpg, png, jpeg, gif, svg",
-                "foto.image" => "File type must image"
+                "foto.image" => "File type must image",
+                "status.required" => "Status must selected"
             ]
         );
         if(!empty($request->foto)){
@@ -40,10 +44,12 @@ class PartnerController extends Controller
         }else{
             $fileName = null;
         }
-        DB::table('partners')->insert([
+        Partner::create([
             "name" => $request->name,
             "testimony" => $request->testimony,
             "rating" => $request->rating,
+            "position" => $request->position,
+            "isShow" => $request->status,
             "foto" => $fileName
         ]);
         return redirect()->route('admin.index');
@@ -57,16 +63,21 @@ class PartnerController extends Controller
                 "name" => "required|max:200",
                 "testimony" => "required",
                 "rating" => "required",
-                "foto" => "nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048"
+                "foto" => "nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
+                "position" => "required|max:255",
+                "status" => "required"
             ],
             [
                 "name.required" => "name field must not null",
                 "name.max" => "name must not more 200 characters",
                 "testimony.required" => "Content Field must not null",
                 "rating.required" => "Event date must fill",
+                "position.required" => "Position field must fill",
+                "position.max" => "Position must not more 255 characters",
                 'foto.max' => 'Maximal size for photo is 2 MB',
                 "foto.mimes" => "File extension only jpg, png, jpeg, gif, svg",
-                "foto.image" => "File type must image"
+                "foto.image" => "File type must image",
+                "status.required" => "Status must selected"
             ]
         );
         $hasDelete = $request->input('hasDelete') === 'true';
@@ -82,10 +93,12 @@ class PartnerController extends Controller
                 $fileName = $oldUrl;
             }
         }
-        DB::table('partners')->where('id', '=', $id)->update([
+        Partner::where('id', $id)->update([
             "name" => $request->name,
             "rating" => $request->rating,
             "testimony" => $request->testimony,
+            "position" => $request->position,
+            "isShow" => $request->status,
             "foto" => $fileName
         ]);
         return redirect()->route('admin.index');
