@@ -30,22 +30,26 @@ Route::get('/events', function () {
 });
 
 //Admin GET
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/login', function () {
     return view('adminLogin');
 });
-Route::get('/admin/article/add', function () {
-    return view('addArticle');
-});
-Route::get('/admin/event/add', function () {
-    return view('addEvent');
-});
-Route::get('/admin/partner/add', function () {
-    return view('addPartner');
-});
-Route::get('/admin/article/edit/{id}', [ArticleController::class, 'indexEditArticle'])->name('admin.indexEditArticle');
-Route::get('/admin/event/edit/{id}', [EventController::class, 'indexEditArticle'])->name('admin.indexEditArticle');
-Route::get('/admin/partner/edit/{id}', [PartnerController::class, 'indexEditPartner'])->name('admin.indexEditPartner');
+Route::middleware(['adminMiddleware'])->prefix('/admin')->group(function()
+    {
+        Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+        Route::get('/article/add', function () {
+            return view('addArticle');
+        });
+        Route::get('/event/add', function () {
+            return view('addEvent');
+        });
+        Route::get('/partner/add', function () {
+            return view('addPartner');
+        });
+        Route::get('/article/edit/{id}', [ArticleController::class, 'indexEditArticle'])->name('admin.indexEditArticle');
+        Route::get('/event/edit/{id}', [EventController::class, 'indexEditArticle'])->name('admin.indexEditArticle');
+        Route::get('/partner/edit/{id}', [PartnerController::class, 'indexEditPartner'])->name('admin.indexEditPartner');
+    }
+);
 
 //Auth POST
 Route::post('/api/auth/user/regist', [AuthController::class, 'registerUser'])->name('admin.registerUser');
