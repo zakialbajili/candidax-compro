@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PartnerController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,9 @@ Route::get('/articles', function () {
 Route::get('/events', function () {
     return view('events');
 });
+
+//CREATE CONSULTATION
+Route::post('/create/consult', [ConsultationController::class, 'createConsult'])->name('createConsult');
 
 //Admin GET
 Route::get('/admin/login', function () {
