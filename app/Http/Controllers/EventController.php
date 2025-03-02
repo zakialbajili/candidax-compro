@@ -47,11 +47,13 @@ class EventController extends Controller
         }else{
             $fileName = null;
         }
-        DB::table('events')->insert([
+        Event::create([
             "title"=>$request->title,
             "description"=>$request->description,
             "event_date"=>$request->event_date,
-            "foto"=>$fileName
+            "foto"=>$fileName,
+            "created_at"=>now(),
+            "updated_at"=>now()
         ]);
         return redirect()->route('admin.index');
     }
@@ -89,7 +91,7 @@ class EventController extends Controller
                 $fileName = $oldUrl;
             }
         }
-        DB::table('events')->where('id', '=', $id)->update([
+        Event::where('id', $id)->update([
             "title" => $request->title,
             "event_date" => $request->event_date,
             "description" => $request->description,

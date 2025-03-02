@@ -48,10 +48,12 @@ class ArticleController extends Controller
         } else {
             $fileName = null;
         }
-        DB::table('articles')->insert([
+        Article::create([
             "title" => $request->title,
             "description" => $request->description,
-            "foto" => $fileName
+            "foto" => $fileName,
+            "created_at"=>now(),
+            "updated_at"=>now()
         ]);
         return redirect()->route('admin.index');
     }
@@ -86,10 +88,11 @@ class ArticleController extends Controller
                 $fileName = $oldUrl;
             }
         }
-        DB::table('articles')->where('id', '=', $id)->update([
+        Article::where('id', $id)->update([
             "title" => $request->title,
             "description" => $request->description,
-            "foto" => $fileName
+            "foto" => $fileName,
+            "updated_at"=>now()
         ]);
         return redirect()->route('admin.index');
     }

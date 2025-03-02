@@ -22,41 +22,43 @@
             <tr>
                 <th class="p-5 font-normal text-start">Banner</th>
                 <th class="p-5 font-normal text-start">Title</th>
-                <th class="p-5 font-normal text-start">Content</th>
+                <th class="p-5 font-normal text-start">Date</th>
                 <th class="p-5 font-normal text-start">Action</th>
             </tr>
         </thead>
         <tbody>
             @if(is_object($articles))
-                @foreach($articles as $article )
-                <tr>
-                    <td class="p-5">
-                        @if($article->foto)
-                        <img src="{{asset('/storage/image/'.$article->foto)}}" alt="{{$article->foto}}" class="max-w-[160px] max-h-[178px]">
-                        @endif
-                    </td>
-                    <td class="p-5">
-                        <p>{{$article->title}}</p>
-                    </td>
-                    <td class="p-5">
-                        <p>{{$article->description}}</p>
-                    </td>
-                    <td>
-                        <div class="flex gap-5 justify-center items-center">
-                            <a href="{{'/admin/article/edit/'.$article->id}}">
-                                <x-icons.editIcon />
-                            </a>
-                            <button
-                                class="openModalArticle text-cherryRed"
-                                data-title="{{ $article->title }}"
-                                data-id="{{ $article->id }}"
-                            >
-                                <x-icons.trashIcon />
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                @endforeach
+            @foreach($articles as $article )
+            <tr>
+                <td class="p-5">
+                    @if($article->foto)
+                    <img src="{{asset('/storage/image/'.$article->foto)}}" alt="{{$article->foto}}" class="max-w-[160px] max-h-[178px]">
+                    @endif
+                </td>
+                <td class="p-5">
+                    <p>{{$article->title}}</p>
+                </td>
+                <td class="p-5">
+                    @php
+                    $releaseDate = \Carbon\Carbon::parse($article->created_at);
+                    @endphp
+                    <p>{{ date_format($releaseDate, "j F Y") }}</p>
+                </td>
+                <td>
+                    <div class="flex gap-5 justify-center items-center">
+                        <a href="{{'/admin/article/edit/'.$article->id}}">
+                            <x-icons.editIcon />
+                        </a>
+                        <button
+                            class="openModalArticle text-cherryRed"
+                            data-title="{{ $article->title }}"
+                            data-id="{{ $article->id }}">
+                            <x-icons.trashIcon />
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            @endforeach
             @else
             <tr>
                 <td colspan="5" class="text-center py-5">No articles available</td>
@@ -64,16 +66,16 @@
             @endif
         </tbody>
     </table>
-    <x-modal.modalDeleteArticle/>
+    <x-modal.modalDeleteArticle />
 </div>
 <script>
     const modal = document.getElementById("modalArticle");
     const modalText = document.getElementById("modalDeleteArticleText");
     const btnOpenModalArticle = document.getElementById('openModalArticle');
-    document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener("DOMContentLoaded", function() {
         const deleteForm = document.getElementById('deleteArticleForm');
         document.querySelectorAll('.openModalArticle').forEach(button => {
-            button.addEventListener("click", function(){
+            button.addEventListener("click", function() {
                 const articleTitle = this.getAttribute("data-title");
                 const articleId = this.getAttribute("data-id");
                 modalArticle.classList.remove('hidden');

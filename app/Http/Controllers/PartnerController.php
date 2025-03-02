@@ -50,7 +50,9 @@ class PartnerController extends Controller
             "rating" => $request->rating,
             "position" => $request->position,
             "isShow" => $request->status,
-            "foto" => $fileName
+            "foto" => $fileName,
+            "created_at"=>now(),
+            "updated_at"=>now()
         ]);
         return redirect()->route('admin.index');
     }
@@ -99,7 +101,8 @@ class PartnerController extends Controller
             "testimony" => $request->testimony,
             "position" => $request->position,
             "isShow" => $request->status,
-            "foto" => $fileName
+            "foto" => $fileName,
+            "updated_at"=>now()
         ]);
         return redirect()->route('admin.index');
     }

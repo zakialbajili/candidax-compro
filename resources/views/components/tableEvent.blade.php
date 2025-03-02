@@ -22,7 +22,6 @@
             <tr>
                 <th class="p-5 font-normal text-start">Banner</th>
                 <th class="p-5 font-normal text-start">Title</th>
-                <th class="p-5 font-normal text-start">Content</th>
                 <th class="p-5 font-normal text-start">Tanggal</th>
                 <th class="p-5 font-normal text-start">Status</th>
                 <th class="p-5 font-normal text-start">Action</th>
@@ -39,9 +38,6 @@
                 </td>
                 <td class="p-5">
                     <p>{{ $event->title }}</p>
-                </td>
-                <td class="p-5">
-                    <p>{{ $event->description }}</p>
                 </td>
                 <td class="p-5">
                     @php
