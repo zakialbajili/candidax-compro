@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
+    public function listEvents()
+    {
+        $listEvents = Event::orderBy('event_date', 'desc')->get();
+        return view('events', compact('listEvents'));
+    }
+    public function detailEvent(string $id)
+    {
+        $event = Event::where('id', $id)->first();
+        return view('detailEvent', compact('event'));
+    }
     public function indexEditArticle(string $id)
     {
         $detailEvent = Event::where('id', $id)->firstOrFail(); // Ambil data artikel atau tampilkan 404 jika tidak ditemukan

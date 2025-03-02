@@ -12,9 +12,9 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $articles = Article::all();
-        $events = Event::all();
-        $partners = Partner::all();
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        $events = Event::orderBy('event_date', 'desc')->get();
+        $partners = Partner::orderBy('created_at', 'desc')->get();
         return view('admin', compact('articles', 'events', 'partners'));
     }
     //

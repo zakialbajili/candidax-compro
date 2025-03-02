@@ -23,7 +23,6 @@
                 <th class="p-5 font-normal text-start">Banner</th>
                 <th class="p-5 font-normal text-start">Title</th>
                 <th class="p-5 font-normal text-start">Content</th>
-                <th class="p-5 font-normal text-start">Status</th>
                 <th class="p-5 font-normal text-start">Action</th>
             </tr>
         </thead>
@@ -41,9 +40,6 @@
                     </td>
                     <td class="p-5">
                         <p>{{$article->description}}</p>
-                    </td>
-                    <td class="p-5">
-                        <div class="rounded-xl p-[10px] bg-softBlue w-fit text-white">Active</div>
                     </td>
                     <td>
                         <div class="flex gap-5 justify-center items-center">

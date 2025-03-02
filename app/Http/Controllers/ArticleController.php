@@ -10,8 +10,13 @@ class ArticleController extends Controller
 {
     public function listArticle()
     {
-        $article = Article::all();
-        return view();
+        $listArticles = Article::orderBy('created_at', 'desc')->get();
+        return view('articles', compact('listArticles'));
+    }
+    public function detailArticle(string $id)
+    {
+        $article = Article::where('id', $id)->first();
+        return view('detailArticle', compact('article'));
     }
     public function indexEditArticle(string $id)
     {

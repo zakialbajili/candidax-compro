@@ -23,12 +23,10 @@ Route::get('/services', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/articles', function () {
-    return view('articles');
-});
-Route::get('/events', function () {
-    return view('events');
-});
+Route::get('/articles', [ArticleController::class, 'listArticle'])->name('articles');
+Route::get('/article/{id}', [ArticleController::class, 'detailArticle'])->name('detailArticle');
+Route::get('/events', [EventController::class, 'listEvents'])->name('events');
+Route::get('/event/{id}', [EventController::class, 'detailEvent'])->name('detailEvent');
 
 //CREATE CONSULTATION
 Route::post('/create/consult', [ConsultationController::class, 'createConsult'])->name('createConsult');
