@@ -14,15 +14,15 @@
                 </button>
                 <h1 class="font-semibold text-2xl px-[10%] mb-5">Article List</h1>
             </div>
-            <x-tableArticle :articles="$articles" />
+            <x-tableArticle />
         </article>
         <article>
             <h1 class="font-semibold text-2xl px-[10%] mb-5">Event List</h1>
-            <x-tableEvent :events="$events" />
+            <x-tableEvent/>
         </article>
         <article>
             <h1 class="font-semibold text-2xl px-[10%] mb-5">Partner & Client List</h1>
-            <x-tablePartner :partners="$partners" />
+            <x-tablePartner/>
         </article>
     </div>
     <x-modal.modalAddUser />

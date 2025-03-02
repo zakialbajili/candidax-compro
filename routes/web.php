@@ -6,6 +6,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PartnerController;
+use App\Models\Article;
+use App\Models\Event;
+use App\Models\Partner;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -53,6 +57,41 @@ Route::middleware(['adminMiddleware'])->prefix('/admin')->group(function()
     }
 );
 
+//API Endpoint
+//Table Data
+Route::get('/api/articles', function (Request $request) {
+    $search = $request->query('search', '');
+    $limit = $request->query('limit', 10);
+
+    $articles = Article::where('title', 'like', "%$search%")->orderBy('created_at', 'desc')->paginate($limit);
+
+    return response()->json([
+        'articles' => $articles->items(),
+        'pagination' => $articles->links('vendor.pagination.tailwind')->render()
+    ]);
+});
+Route::get('/api/events', function (Request $request) {
+    $search = $request->query('search', '');
+    $limit = $request->query('limit', 10);
+
+    $events = Event::where('title', 'like', "%$search%")->orderBy('event_date', 'desc')->paginate($limit);
+
+    return response()->json([
+        'events' => $events->items(),
+        'pagination' => $events->links('vendor.pagination.tailwind')->render()
+    ]);
+});
+Route::get('/api/partners', function (Request $request) {
+    $search = $request->query('search', '');
+    $limit = $request->query('limit', 10);
+
+    $partners = Partner::where('name', 'like', "%$search%")->orderBy('created_at', 'desc')->paginate($limit);
+
+    return response()->json([
+        'partners' => $partners->items(),
+        'pagination' => $partners->links('vendor.pagination.tailwind')->render()
+    ]);
+});
 //Auth POST
 Route::post('/api/auth/user/regist', [AuthController::class, 'registerUser'])->name('admin.registerUser');
 Route::post('/api/auth/user/login', [AuthController::class, 'loginUser'])->name('admin.loginUser');
