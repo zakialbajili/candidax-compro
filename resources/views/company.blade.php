@@ -22,8 +22,8 @@
         </div>
     </div>
     <div class=" pl-10 lg:pl-[110px] pt-[45px] bg-subtleGray">
-        <x-alittleArticle />
+        <x-alittle-article />
     </div>
-    <x-alittleEvent class="bg-subtleGray" />
+    <x-alittle-event class="bg-subtleGray" />
 </main>
 @endsection
