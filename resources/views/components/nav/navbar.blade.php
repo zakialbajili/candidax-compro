@@ -10,7 +10,7 @@
                 <x-nav.linkNav href="/contact" label="Contact" />
                 <x-nav.linkNav href="/admin" label="Admin" />
             </div>
-            <a href="/" class="hidden lg:block p-[10px] bg-jungleGreen rounded-xl text-white">Contact Us</a>
+            <a href="https://bit.ly/CallCandidax" class="hidden lg:block p-[10px] bg-jungleGreen rounded-xl text-white">Contact Us</a>
             <button id="hamburgerButton" class="block lg:hidden"><x-icons.hamburgerIcon /></button>
         </div>
         <div id="navbarMobile" class="hidden h-screen w-screen fixed top-0 left-0 right-0 bottom-0 lg:hidden bg-black/50 justify-end">
@@ -23,7 +23,7 @@
                     <x-nav.linkNav href="/contact" label="Contact" />
                     <x-nav.linkNav href="/admin" label="Admin" />
                 </div>
-                <a href="/" class="lg:hidden block p-[10px] bg-jungleGreen rounded-xl text-white">Contact Us</a>
+                <a href="https://bit.ly/CallCandidax" class="lg:hidden block p-[10px] bg-jungleGreen rounded-xl text-white">Contact Us</a>
             </div>
             <button id="exitNavbar" class="absolute top-4 right-4 rounded-full">
                 <x-icons.exitNavbar />

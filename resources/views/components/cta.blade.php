@@ -5,9 +5,9 @@
                 <h2 class="text-jungleGreen text-xl 2xl:text-[32px] leading-8 2xl:leading-[48px] font-extrabold text-[32px]">Let’s start your consultation for better <br/> feeling to start your days</h2>
                 <p class="text-sm 2xl:text-base">We are always for you anywhere and anytime you need</p>
             </div>
-            <button class="max-w-[210px] p-[10px] rounded-xl bg-jungleGreen text-white">
+            <a href="https://bit.ly/CallCandidax" class="max-w-[210px] p-[10px] rounded-xl bg-jungleGreen text-white text-center">
                 Konsultasi Sekarang
-            </button>
+            </a>
         </div>
         <img src="{{asset('/assets/images/web/callToAction.png')}}" alt="cta image" class="w-[439px] h-[259px] 2xl:w-[539px] 2xl:h-[359px]">
     </div>

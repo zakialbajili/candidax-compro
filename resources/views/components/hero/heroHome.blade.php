@@ -6,9 +6,9 @@
                 <h1 class="font-extrabold text-2xl 2xl:text-[32px] leading-8 2xl:leading-[48px] text-jungleGreen">Optimalkan Potensi SDM Bersama Candidax <span class="text-primerText">untuk Masa Depan yang Lebih Baik!</span> </h1>
                 <p class="mt-5 text-sm">Candidax sebagai solusi pengelolaan dan pengembangan Sumber Daya Manusia di Indonesia. Ambil peran dalam mendukung kebutuhan perusahaan maupun individu pencari kerja dalam membangun karir dan masa depannya.</p>
             </div>
-            <button class="max-w-[210px] p-[10px] rounded-xl bg-jungleGreen text-white">
+            <a href="https://bit.ly/CallCandidax" class="max-w-[210px] p-[10px] rounded-xl bg-jungleGreen text-white text-center">
                 Solusi Bisnis Anda
-            </button>
+            </a>
         </div>
     </div>
     <div class="flex-grow justify-center lg:justify-normal h-[50vh] lg:h-full lg:bg-subtleGray flex items-center px-5 lg:px-0">
