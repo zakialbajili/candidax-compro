@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\SitemapController;
 use App\Models\Article;
 use App\Models\Event;
 use App\Models\Partner;
@@ -27,6 +28,9 @@ Route::get('/services', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+
 Route::get('/articles', [ArticleController::class, 'listArticle'])->name('articles');
 Route::get('/article/{id}', [ArticleController::class, 'detailArticle'])->name('detailArticle');
 Route::get('/events', [EventController::class, 'listEvents'])->name('events');
