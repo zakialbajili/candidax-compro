@@ -1,5 +1,5 @@
 <div id="containerSlider" data-listPartner="{{$listShowPartners}}" class="w-full bg-subtleGray py-10 lg:py-[60px] flex justify-center items-center">
-    <div class="w-[80%] flex flex-col items-center gap-10 lg:gap-2 overflow-x-auto">
+    <div class="w-[80%] flex flex-col items-center gap-10 lg:gap-2 overflow-x-hidden">
         <div class="cardPartner w-full flex flex-wrap-reverse lg:flex-nowrap justify-center lg:justify-between gap-[37px] lg:gap-24 text-primerText text-lg">
             <div class="flex flex-col gap-12 lg:gap-0 justify-between">
                 <p id="testimonyText" class="text-sm lg:text-xl 2xl:text-[32px] text-center lg:text-start leading-5 lg:leading-8 2xl:leading-[48px]"></p>
@@ -28,50 +28,43 @@
         const nextSlide = document.getElementById('nextSlide');
         const imagePartner = document.getElementById('imagePartner');
         const containerRating = document.getElementById('containerRating');
+        const cardPartner = document.querySelector('.cardPartner');
         const listPartner = JSON.parse(containerSlider.getAttribute('data-listPartner'));
         let indexShow = 0;
 
-        function changeCard(index) {
-            testimonyText.innerHTML = `" ${listPartner[index].testimony} "`;
-            clientName.innerHTML = listPartner[index].name;
-            clientPosition.innerHTML = listPartner[index].position;
-            imagePartner.src = `/storage/image/${listPartner[index].foto}`;
-            const rating = listPartner[index].rating;
-            const stars = document.querySelectorAll('.ratingStar')
-            let listStars ='';
-            for(let i=1; i<=5; i++){
-                if(i<=rating){
+        function changeCard(index, direction) {
+            cardPartner.classList.add(direction === 'next' ? 'slide-next' : 'slide-prev');
+            setTimeout(() => {
+                testimonyText.innerHTML = `" ${listPartner[index].testimony} "`;
+                clientName.innerHTML = listPartner[index].name;
+                clientPosition.innerHTML = listPartner[index].position;
+                imagePartner.src = `/storage/image/${listPartner[index].foto}`;
+                
+                const rating = listPartner[index].rating;
+                let listStars = '';
+                for (let i = 1; i <= 5; i++) {
                     listStars += `
-                        <span class="ratingStar text-gold">
+                        <span class="ratingStar ${i <= rating ? 'text-gold' : 'text-primerText'}">
                             <x-icons.starIcon />
                         </span>
-                    `
-                }else{
-                    listStars += `
-                        <span class="ratingStar text-primerText">
-                            <x-icons.starIcon />
-                        </span>
-                    `
+                    `;
                 }
-            }
-            containerRating.innerHTML = listStars;
+                containerRating.innerHTML = listStars;
+                
+                cardPartner.classList.remove('slide-next', 'slide-prev');
+            }, 300);
         }
-        changeCard(0)
+
+        changeCard(0);
+
         nextSlide.addEventListener('click', function() {
-            if (indexShow < listPartner.length - 1) {
-                indexShow += 1;
-            } else {
-                indexShow = 0;
-            }
-            changeCard(indexShow);
-        })
+            indexShow = (indexShow < listPartner.length - 1) ? indexShow + 1 : 0;
+            changeCard(indexShow, 'next');
+        });
+
         prevSlide.addEventListener('click', function() {
-            if (indexShow > 0) {
-                indexShow -= 1;
-            } else {
-                indexShow = listPartner.length-1;
-            }
-            changeCard(indexShow);
-        })
-    })
+            indexShow = (indexShow > 0) ? indexShow - 1 : listPartner.length - 1;
+            changeCard(indexShow, 'prev');
+        });
+    });
 </script>
