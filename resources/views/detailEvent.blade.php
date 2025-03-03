@@ -1,6 +1,7 @@
 @extends('layout.main')
 
-@section('title', 'Candidax | Article')
+@section('title', $event->title)
+@section('description', $event->description)
 @section('content')
 <main class=" min-h-screen pt-[150px] px-[5%] lg:px-[110px] flex flex-col gap-5 font-poppins text-primerText">
     <img src="{{asset('/storage/image/'.$event->foto)}}" alt="{{$event->title}}" class="object-top w-full h-auto max-h-[250px] lg:max-h-[500px] rounded-2xl"/>

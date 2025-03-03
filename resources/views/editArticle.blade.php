@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('title', 'Edit Article | Candidax')
+@section('title', "'Edit Article | Candidax'")
 @section('content')
 <main class="w-full h-screen flex items-center justify-center font-poppins text-primerText pt-[200px]">
     <div class="w-full h-fit rounded-xl flex flex-col gap-10 px-[5%]">
