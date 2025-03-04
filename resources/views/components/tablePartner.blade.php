@@ -1,4 +1,4 @@
-<!-- @props(["partners"]) -->
+@props(["partners"]) 
 <div class="w-full bg-subtleGray px-[10%] py-10 flex flex-col gap-y-5">
     <div class="w-full flex justify-between">
         <select id="limitSelectPartner" class="border-2 border-jungleGreen rounded-xl p-[10px] text-jungleGreen">

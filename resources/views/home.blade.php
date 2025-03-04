@@ -10,7 +10,7 @@
             Collaboration is the key to success. <br class="hidden lg:block"/>
             <span class="text-black">Let’s grow together !</span>
         </h2>
-        <x-slider-testimoni/>
+        <x-slider-testimoni :listShowPartners="$listShowPartners"/>
     </div>
     <x-cta />
 </main>

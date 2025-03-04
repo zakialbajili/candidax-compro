@@ -1,4 +1,4 @@
-<header class="pt-10 absolute top-0 left-0 right-0 bottom-0 flex justify-center w-full h-fit font-poppins z-30">
+<header id="navbar" class="py-5 fixed top-0 left-0 right-0 bottom-0 flex justify-center w-full h-fit font-poppins z-30">
     <nav class="w-full">
         <div class="w-[80%] max-w-[90%] h-[55px] flex justify-between items-center mx-auto font-medium text-primerText">
             <img src="{{ asset( '/assets/images/web/logo_candidax.png' )}}" alt="logo">
@@ -32,6 +32,7 @@
     </nav>
 </header>
 <script>
+    const navbar = document.getElementById("navbar");
     const exitNavbar = document.getElementById('exitNavbar');
     const navbarMobile = document.getElementById('navbarMobile');
     const hamburgerButton = document.getElementById('hamburgerButton');
@@ -44,4 +45,12 @@
         navbarMobile.classList.remove('flex');
         navbarMobile.classList.add('hidden');
     })
+    // Ubah background navbar saat scroll
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) { // Saat scroll lebih dari 50px
+            navbar.classList.add('bg-white', 'shadow-md');
+        } else { // Saat kembali ke atas
+            navbar.classList.remove('bg-white', 'shadow-md');
+        }
+    });
 </script>

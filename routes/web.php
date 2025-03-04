@@ -14,13 +14,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    $listShowPartners = Partner::where('isShow', 'SHOW')->get();
+    return view('home', compact('listShowPartners'));
 });
 Route::get('/company', function () {
-    return view('company');
+    $articles = Article::orderBy('created_at', 'desc')->take(3)->get();
+    $events = Event::orderBy('event_date', 'desc')->take(3)->get();
+    return view('company', compact('articles', 'events'));
 });
 Route::get('/collaboration', function () {
-    return view('collaboration');
+    $listShowPartners = Partner::where('isShow', 'SHOW')->get();
+    return view('collaboration', compact('listShowPartners'));
 });
 Route::get('/services', function () {
     return view('services');

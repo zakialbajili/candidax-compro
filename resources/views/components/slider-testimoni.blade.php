@@ -1,4 +1,8 @@
-<div id="containerSlider" data-listPartner="{{$listShowPartners}}" class="w-full bg-subtleGray py-10 lg:py-[60px] flex justify-center items-center">
+@props(["listShowPartners"])
+@php
+    $jsonListShowPartners = json_encode($listShowPartners, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE);
+@endphp
+<div id="containerSlider" data-listPartner="{{$jsonListShowPartners}}" class="w-full bg-subtleGray py-10 lg:py-[60px] flex justify-center items-center">
     <div class="w-[80%] flex flex-col items-center gap-10 lg:gap-2 overflow-x-hidden">
         <div class="cardPartner w-full flex flex-wrap-reverse lg:flex-nowrap justify-center lg:justify-between gap-[37px] lg:gap-24 text-primerText text-lg">
             <div class="flex flex-col gap-12 lg:gap-0 justify-between">
@@ -19,6 +23,7 @@
     </div>
 </div>
 <script>
+    console.log(containerSlider.getAttribute('data-listPartner'));
     document.addEventListener("DOMContentLoaded", function() {
         const containerSlider = document.getElementById('containerSlider');
         const testimonyText = document.getElementById('testimonyText');
@@ -30,6 +35,7 @@
         const containerRating = document.getElementById('containerRating');
         const cardPartner = document.querySelector('.cardPartner');
         const listPartner = JSON.parse(containerSlider.getAttribute('data-listPartner'));
+        console.log(listPartner);
         let indexShow = 0;
 
         function changeCard(index, direction) {

@@ -1,4 +1,4 @@
-<!-- @props(["events"]) -->
+@props(["events"]) 
 <div class="w-full bg-subtleGray px-[10%] py-10 flex flex-col gap-y-5">
     <div class="w-full flex justify-between">
         <select id="limitSelectEvent" class="border-2 border-jungleGreen rounded-xl p-[10px] text-jungleGreen">
@@ -137,7 +137,7 @@
                     <p>${new Date(event.event_date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
                 </td>
                 <td class="p-5">
-                    ${new Date(even.event_date) > now() ? 
+                    ${new Date(event.event_date) > Date.now() ? 
                     '<div class="rounded-xl p-[10px] bg-softBlue w-fit text-white">Active</div>':
                     '<div class="rounded-xl p-[10px] bg-cherryRed w-fit text-white">Past</div>'
                     }
@@ -168,29 +168,3 @@
         limitSelectEvent.addEventListener("change", fetchEvents);
     })
 </script>
-<!-- @if($eventDate->isPast())
-<div class="rounded-xl p-[10px] bg-cherryRed w-fit text-white">Past</div>
-@else
-<div class="rounded-xl p-[10px] bg-softBlue w-fit text-white">Active</div>
-@endif -->
-<!-- <tr>
-    <td class="p-5">
-        ${article.foto ? `<img src="/storage/image/${article.foto}" alt="${article.foto}" class="max-w-[160px] max-h-[178px]">` : ""}
-    </td>
-    <td class="p-5">
-        <p>${article.title}</p>
-    </td>
-    <td class="p-5">
-        <p>${new Date(article.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
-    </td>
-    <td>
-        <div class="flex gap-5 justify-center items-center">
-            <a href="/admin/article/edit/${article.id}">
-                <x-icons.editIcon />
-            </a>
-            <button class="openModalArticle text-cherryRed" data-title="${article.title}" data-id="${article.id}">
-                <x-icons.trashIcon />
-            </button>
-        </div>
-    </td>
-</tr> -->

@@ -16,7 +16,7 @@ class tableArticle extends Component
     public function __construct()
     {
         //
-        $this->articles = Article::orderBy('created_at', 'desc')->paginate(5);
+        $this->articles = Article::orderBy('created_at', 'desc')->paginate(1);
     }
 
     /**

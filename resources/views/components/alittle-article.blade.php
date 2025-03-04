@@ -1,3 +1,4 @@
+@props(["listArticle"])
 <div class="flex flex-col gap-5 font-poppins text-primerText">
     <h1 class="2xl:text-[32px] text font-extrabold">Article</h1>
     <div class="w-full flex gap-5 lg:gap-16 overflow-x-auto snap-x snap-mandatory scroll-smooth">

@@ -1,3 +1,4 @@
+@props(["listEvents"])
 <div class="pt-[81px] pb-[112px] w-full pl-10 lg:px-[10%] flex flex-col gap-8 font-poppins text-primerText bg-subtleGray">
     <h1 class="2xl:text-[32px] text font-extrabold">Event</h1>
     <div class="w-full flex justify-between gap-5 lg:gap-16 overflow-x-scroll lg:overflow-x-hidden">

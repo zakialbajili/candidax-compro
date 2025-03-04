@@ -16,7 +16,7 @@ class tableEvent extends Component
     public function __construct()
     {
         //
-        $this->events = Event::orderBy('event_date', 'desc')->paginate(5);
+        $this->events = Event::orderBy('event_date', 'desc')->paginate(1);
     }
 
     /**

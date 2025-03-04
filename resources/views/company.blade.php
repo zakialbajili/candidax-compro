@@ -22,8 +22,8 @@
         </div>
     </div>
     <div class=" pl-10 lg:pl-[110px] pt-[45px] bg-subtleGray">
-        <x-alittle-article />
+        <x-alittle-article :listArticle="$articles" />
     </div>
-    <x-alittle-event class="bg-subtleGray" />
+    <x-alittle-event :listEvents="$events" class="bg-subtleGray" />
 </main>
 @endsection

@@ -16,7 +16,7 @@ class tablePartner extends Component
     public function __construct()
     {
         //
-        $this->partners = Partner::orderBy('created_at', 'desc')->paginate(5);
+        $this->partners = Partner::orderBy('created_at', 'desc')->paginate(1);
     }
 
     /**
